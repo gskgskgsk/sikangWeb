@@ -56,6 +56,10 @@ jobs:
       - name: Configure GitHub Pages
         id: pages
         uses: actions/configure-pages@v5
+        with:
+          # 若仓库尚未开启 Pages，自动以 GitHub Actions 方式开启
+          enablement: true
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build with Hugo
         env:
