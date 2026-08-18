@@ -1,5 +1,5 @@
 # 自动部署到 GitHub Pages
-# 每次 push 到 main 分支后自动构建并发布到 https://gskgskgsk.github.io/sikang-Website/
+# 每次 push 到 main 分支后自动构建并发布到 https://gskgskgsk.github.io/sikangWeb/
 name: Deploy to GitHub Pages
 
 on:

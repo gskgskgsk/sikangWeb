@@ -2,7 +2,7 @@
 
 基于 [Hugo](https://gohugo.io/) 静态站点生成器和 [HugoBlox Academic](https://github.com/HugoBlox/hugo-theme-academic-cv) 学术主题搭建的个人主页，部署于 GitHub Pages：
 
-👉 https://gskgskgsk.github.io/sikang-Website/
+👉 https://gskgskgsk.github.io/sikangWeb/
 
 ## 技术栈
 
