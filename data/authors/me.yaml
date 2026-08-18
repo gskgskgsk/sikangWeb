@@ -1,0 +1,86 @@
+schema: hugoblox/author/v1
+slug: me
+is_owner: true
+name:
+  # 站内显示的名字（改成你自己的真实姓名）
+  display: Sikang Guo
+  given: Sikang
+  family: Guo
+  # 中文名，例如：郭思康
+  alternate: '郭思康'
+  pronunciation: ''  # 拼音，例如：Guō Sīkāng
+  pronouns: he/him
+postnominals: []
+status:
+  icon: "🌱"
+# 一句话介绍（显示在头像下方）
+role: Developer
+bio: |
+  你好，我是 Sikang，一名热爱编程与分享的开发者。
+  这里是我的个人主页：记录我的学习经历、项目作品与日常思考，
+  也欢迎通过下面的链接与我交流。
+
+affiliations: []
+
+links:
+  - icon: brands/github
+    url: https://github.com/gskgskgsk
+    label: GitHub
+  - icon: at-symbol
+    url: mailto:your-email@example.com
+    label: 给我发邮件
+
+interests:
+  - Web 开发
+  - 开源项目
+  - 机器学习
+  - 个人知识管理
+
+# 教育经历（按时间倒序，start 必填）
+education:
+  - degree: 学士 · 计算机科学（示例，请修改）
+    institution: XX 大学
+    start: 2019-09-01
+    end: 2023-06-30
+    summary: |
+      在这里填写你的专业、主修课程、毕业设计等。
+
+# 工作/实习经历（按时间倒序，start 必填）
+experience:
+  - role: 软件工程师（示例，请修改）
+    org: XX 公司
+    start: 2023-07-01
+    summary: |
+      在这里填写你的工作内容、技术栈与成果。
+
+skills:
+  - name: 技术技能
+    items:
+      - label: Web 开发
+        level: 4
+      - label: Python
+        level: 4
+      - label: Git / GitHub
+        level: 4
+  - name: 其他
+    items:
+      - label: 写作与分享
+        level: 4
+      - label: 英语
+        level: 3
+
+languages:
+  - name: 中文
+    level: 5
+    label: 母语
+  - name: English
+    level: 3
+    label: 良好
+
+# 奖项（可选）
+awards:
+  - title: 示例奖项（请修改）
+    awarder: XX 组织
+    date: "2023-12-01"
+    summary: 在这里填写获奖信息。
+    icon: hero/trophy

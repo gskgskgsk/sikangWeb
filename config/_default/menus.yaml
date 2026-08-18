@@ -1,0 +1,22 @@
+# Navigation Links
+#   url 以 / 开头表示站内页面路径；weight 越小越靠前
+
+main:
+  - name: 首页
+    url: /
+    weight: 10
+  - name: 经历
+    url: experience/
+    weight: 20
+  - name: 项目
+    url: projects/
+    weight: 30
+  - name: 博客
+    url: blog/
+    weight: 40
+  - name: 论文
+    url: publications/
+    weight: 50
+  - name: 友链
+    url: links/
+    weight: 60
