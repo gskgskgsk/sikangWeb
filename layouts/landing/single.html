@@ -1,0 +1,16 @@
+{{ define "main" }}
+{{ if eq .File.BaseFileName "experience" }}
+  <header class="page-hero wrap"><p class="eyebrow">TOOLBOX & EXPERIENCE</p><h1>技术与工程能力</h1><p>技术栈会变化，解决问题的能力会持续积累。</p></header>
+  <section class="tech-sections wrap">
+    <article id="java" class="tech-section"><div class="tech-cover cover-java"><span>01</span></div><div class="tech-body"><p class="eyebrow">BACKEND</p><h2>Java</h2><p>关注 Java 后端开发、面向对象设计、JVM 以及可维护的工程结构。</p><div class="tech-tags"><span>Java</span><span>Spring</span><span>JVM</span></div></div></article>
+    <article id="python" class="tech-section"><div class="tech-cover cover-python"><span>02</span></div><div class="tech-body"><p class="eyebrow">AUTOMATION</p><h2>Python</h2><p>使用 Python 进行工具开发、数据处理、自动化脚本和快速原型验证。</p><div class="tech-tags"><span>Python</span><span>FastAPI</span><span>Automation</span></div></div></article>
+    <article id="agent" class="tech-section"><div class="tech-cover cover-agent"><span>03</span></div><div class="tech-body"><p class="eyebrow">AI ENGINEERING</p><h2>Agent</h2><p>探索 AI Agent、工具调用、上下文编排以及 AI 辅助开发在工程中的应用。</p><div class="tech-tags"><span>LLM</span><span>RAG</span><span>Tool Use</span></div></div></article>
+    <article id="work" class="tech-section"><div class="tech-cover cover-work"><span>04</span></div><div class="tech-body"><p class="eyebrow">KNOWLEDGE</p><h2>工作沉淀</h2><p>记录项目中的技术选型、问题排查、协作方式与工程复盘。</p><div class="tech-tags"><span>工程实践</span><span>问题排查</span><span>CI/CD</span></div></div></article>
+  </section>
+{{ else if eq .File.BaseFileName "links" }}
+  <header class="page-hero wrap"><p class="eyebrow">FRIENDS & TOOLS</p><h1>友情链接</h1><p>我经常访问的站点和本站使用的工具。</p></header>
+  <section class="prose-panel wrap-narrow">{{ (index .Params.sections 0).content.text | markdownify }}</section>
+{{ else }}
+  <article class="article-page wrap-narrow"><header class="article-header"><h1>{{ .Title }}</h1></header><div class="article-content">{{ .Content }}</div></article>
+{{ end }}
+{{ end }}

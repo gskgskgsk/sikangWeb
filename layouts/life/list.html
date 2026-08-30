@@ -1,0 +1,25 @@
+{{ define "main" }}
+<header class="page-hero wrap life-hero">
+  <p class="eyebrow">LIFE OUTSIDE CODE</p>
+  <h1>生活记录</h1>
+  <p>编程之外，记录日常、阅读、观影和偶尔冒出来的想法。</p>
+</header>
+
+<section class="life-topics wrap">
+  <article><span>01</span><h2>日常</h2><p>工作与生活中值得留下的片段。</p></article>
+  <article><span>02</span><h2>阅读·观影</h2><p>书籍、电影和其他内容带来的思考。</p></article>
+  <article><span>03</span><h2>随想</h2><p>与技术无关，但同样值得记录的想法。</p></article>
+</section>
+
+{{ if .Pages }}
+<section class="content-section wrap">
+  <div class="section-heading"><div><p class="eyebrow">RECENT MOMENTS</p><h2>最新记录</h2></div></div>
+  <div class="card-grid">{{ range .Pages.ByDate.Reverse }}{{ partial "article-card.html" . }}{{ end }}</div>
+</section>
+{{ else }}
+<section class="empty-state wrap-narrow">
+  <p class="eyebrow">COMING SOON</p>
+  <h2>生活正在发生，记录会慢慢补上。</h2>
+</section>
+{{ end }}
+{{ end }}

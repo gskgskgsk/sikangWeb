@@ -10,7 +10,7 @@ tags:
   - GitHub Pages
 ---
 
-我的个人网站项目：基于 Hugo 与 HugoBlox Academic 主题搭建，
+我的技术积累站项目：基于 Hugo 与 HugoBlox 搭建，
 通过 GitHub Actions 自动部署到 GitHub Pages。
 
 <!--more-->

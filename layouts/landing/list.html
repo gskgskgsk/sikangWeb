@@ -1,0 +1,12 @@
+{{ define "main" }}
+<header class="page-hero wrap">
+  <p class="eyebrow">SELECTED WORK</p>
+  <h1>项目作品</h1>
+  <p>记录做过的产品、工程实践与技术方案。</p>
+</header>
+<section class="content-section wrap compact-top">
+  <div class="card-grid projects-grid">
+    {{ range .Pages.ByDate.Reverse }}{{ partial "article-card.html" . }}{{ end }}
+  </div>
+</section>
+{{ end }}

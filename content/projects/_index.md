@@ -7,7 +7,7 @@ type: landing
 sections:
   - block: collection
     content:
-      title: 项目作品集
+      title: 项目作品
       text: 我做过的一些项目，欢迎查看源码与体验链接。
       filters:
         folders:

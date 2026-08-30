@@ -1,0 +1,12 @@
+{{ define "main" }}
+<header class="page-hero wrap">
+  <p class="eyebrow">{{ upper (.Section | default "ARCHIVE") }}</p>
+  <h1>{{ .Title }}</h1>
+  {{ with .Description }}<p>{{ . }}</p>{{ end }}
+</header>
+<section class="content-section wrap compact-top">
+  <div class="card-grid">
+    {{ range .Pages.ByDate.Reverse }}{{ partial "article-card.html" . }}{{ end }}
+  </div>
+</section>
+{{ end }}
