@@ -2,8 +2,8 @@
 #   url 以 / 开头表示站内页面路径；weight 越小越靠前
 
 main:
-  - name: 首页
-    url: /
+  - name: 我
+    url: about/
     weight: 10
   - name: 技术栈
     url: experience/
@@ -11,9 +11,6 @@ main:
   - name: 项目
     url: projects/
     weight: 30
-  - name: 博客
-    url: blog/
-    weight: 40
   - name: 生活
     url: life/
-    weight: 50
+    weight: 40

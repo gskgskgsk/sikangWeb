@@ -1,12 +1,34 @@
 {{ define "main" }}
-{{ if eq .File.BaseFileName "experience" }}
-  <header class="page-hero wrap"><p class="eyebrow">TOOLBOX & EXPERIENCE</p><h1>技术与工程能力</h1><p>技术栈会变化，解决问题的能力会持续积累。</p></header>
+{{ if eq .Section "stack" }}
+  <article class="stack-detail wrap-narrow">
+    <a class="back-link" href="{{ "experience/" | relLangURL }}">← 返回技术栈总览</a>
+    <header class="stack-detail-header"><p class="eyebrow">{{ .Params.eyebrow }}</p><p class="stack-index">{{ .Params.index }}</p><h1>{{ .Title }}</h1><p>{{ .Params.summary }}</p><div class="tech-tags">{{ range .Params.tags }}<span>{{ . }}</span>{{ end }}</div></header>
+    <div class="stack-detail-content article-content">{{ .Content }}</div>
+  </article>
+{{ else if eq .File.BaseFileName "experience" }}
+  <header class="page-hero wrap page-hero-compact"><p class="eyebrow">TOOLBOX & EXPERIENCE</p><p>沉淀、分享、成长，让自己和他人都能有所收获！</p></header>
   <section class="tech-sections wrap">
     <article id="java" class="tech-section"><div class="tech-cover cover-java"><span>01</span></div><div class="tech-body"><p class="eyebrow">BACKEND</p><h2>Java</h2><p>关注 Java 后端开发、面向对象设计、JVM 以及可维护的工程结构。</p><div class="tech-tags"><span>Java</span><span>Spring</span><span>JVM</span></div></div></article>
     <article id="python" class="tech-section"><div class="tech-cover cover-python"><span>02</span></div><div class="tech-body"><p class="eyebrow">AUTOMATION</p><h2>Python</h2><p>使用 Python 进行工具开发、数据处理、自动化脚本和快速原型验证。</p><div class="tech-tags"><span>Python</span><span>FastAPI</span><span>Automation</span></div></div></article>
     <article id="agent" class="tech-section"><div class="tech-cover cover-agent"><span>03</span></div><div class="tech-body"><p class="eyebrow">AI ENGINEERING</p><h2>Agent</h2><p>探索 AI Agent、工具调用、上下文编排以及 AI 辅助开发在工程中的应用。</p><div class="tech-tags"><span>LLM</span><span>RAG</span><span>Tool Use</span></div></div></article>
     <article id="work" class="tech-section"><div class="tech-cover cover-work"><span>04</span></div><div class="tech-body"><p class="eyebrow">KNOWLEDGE</p><h2>工作沉淀</h2><p>记录项目中的技术选型、问题排查、协作方式与工程复盘。</p><div class="tech-tags"><span>工程实践</span><span>问题排查</span><span>CI/CD</span></div></div></article>
   </section>
+{{ else if eq .File.BaseFileName "about" }}
+  {{ $author := hugo.Data.authors.me }}
+  {{ $avatar := resources.Get "media/authors/me.jpg" }}
+  <article class="about-page wrap-narrow">
+    <header class="about-header"><p class="eyebrow">ABOUT ME</p><h1>我</h1><p>关于我，以及这个持续积累中的技术站点。</p></header>
+    <section class="about-author">
+      <div class="about-avatar">{{ with $avatar }}<img src="{{ .RelPermalink }}" alt="郭同学在coding">{{ end }}</div>
+      <div class="about-author-copy"><p class="eyebrow">THE BUILDER</p><h2>郭同学在coding</h2><p class="about-role">AI Agent <b>|</b> 全栈开发</p><p>{{ $author.bio | markdownify }}</p>
+        <div class="about-socials"><a href="https://github.com/gskgskgsk" target="_blank" rel="noopener">GitHub ↗</a><a href="https://x.com/TheOrange991105" target="_blank" rel="noopener">X ↗</a><a href="mailto:guosikang115@163.com">Email ↗</a></div>
+      </div>
+    </section>
+    <div class="about-prose">
+      <section><p class="eyebrow">01 / SIKANG LAB</p><h2>关于 Sikang Lab</h2><p>Sikang Lab 是我的个人技术积累站。这里不展示教育经历或论文，更关注真实开发中的思考、踩坑记录、项目实践，以及可以复用的工程解决方案。</p><p>站点围绕 Java、Python、AI Agent 和全栈开发持续更新，也会保留工作沉淀与编码之外的生活记录。</p></section>
+      <section><p class="eyebrow">02 / ABOUT ME</p><h2>关于我</h2><p>我是郭同学，一名喜欢动手构建、持续学习和分享技术的开发者。关注 Web 工程与架构、开源工具链、AI 辅助开发，以及如何让工程协作和知识管理更高效。</p><p>我相信最有价值的技术积累，来自把复杂问题真正解决，再把过程讲清楚。</p></section>
+    </div>
+  </article>
 {{ else if eq .File.BaseFileName "links" }}
   <header class="page-hero wrap"><p class="eyebrow">FRIENDS & TOOLS</p><h1>友情链接</h1><p>我经常访问的站点和本站使用的工具。</p></header>
   <section class="prose-panel wrap-narrow">{{ (index .Params.sections 0).content.text | markdownify }}</section>

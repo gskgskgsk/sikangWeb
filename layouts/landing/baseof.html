@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  {{ partial "analytics.html" . }}
   {{ $style := resources.Get "css/custom.css" | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 </head>
@@ -23,17 +24,18 @@
           <div class="nav-dropdown">
             <a href="{{ .URL | relLangURL }}" {{ if $.IsMenuCurrent "main" . }}class="active"{{ end }}>技术栈 <span class="nav-chevron">⌄</span></a>
             <div class="dropdown-menu">
-              <a href="{{ "experience/#java" | relLangURL }}"><small>01</small><span>Java</span></a>
-              <a href="{{ "experience/#python" | relLangURL }}"><small>02</small><span>Python</span></a>
-              <a href="{{ "experience/#agent" | relLangURL }}"><small>03</small><span>Agent</span></a>
-              <a href="{{ "experience/#work" | relLangURL }}"><small>04</small><span>工作沉淀</span></a>
+              <a href="{{ "stack/java/" | relLangURL }}"><small>01</small><span>Java</span></a>
+              <a href="{{ "stack/python/" | relLangURL }}"><small>02</small><span>Python</span></a>
+              <a href="{{ "stack/agent/" | relLangURL }}"><small>03</small><span>Agent</span></a>
+              <a href="{{ "stack/work/" | relLangURL }}"><small>04</small><span>工作沉淀</span></a>
             </div>
           </div>
           {{ else }}
           <a href="{{ .URL | relLangURL }}" {{ if $.IsMenuCurrent "main" . }}class="active"{{ end }}>{{ .Name }}</a>
           {{ end }}
         {{ end }}
-        <button class="theme-button" type="button" aria-label="切换颜色模式">◐</button>
+        {{ partial "more-menu.html" . }}
+        {{ partial "nav-tools.html" . }}
       </div>
     </nav>
   </header>
