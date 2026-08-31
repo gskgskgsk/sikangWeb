@@ -13,20 +13,39 @@
     <article id="agent" class="tech-section"><div class="tech-cover cover-agent"><span>03</span></div><div class="tech-body"><p class="eyebrow">AI ENGINEERING</p><h2>Agent</h2><p>探索 AI Agent、工具调用、上下文编排以及 AI 辅助开发在工程中的应用。</p><div class="tech-tags"><span>LLM</span><span>RAG</span><span>Tool Use</span></div></div></article>
     <article id="work" class="tech-section"><div class="tech-cover cover-work"><span>04</span></div><div class="tech-body"><p class="eyebrow">KNOWLEDGE</p><h2>工作沉淀</h2><p>记录项目中的技术选型、问题排查、协作方式与工程复盘。</p><div class="tech-tags"><span>工程实践</span><span>问题排查</span><span>CI/CD</span></div></div></article>
   </section>
+{{ else if eq .File.BaseFileName "thanks" }}
+  {{ $avatar := resources.Get "media/authors/me.jpg" }}
+  <article class="thanks-page wrap-narrow">
+    <header class="thanks-header"><p class="eyebrow">CONTRIBUTORS & THANKS</p><h1>致谢</h1><p>感谢每一位为 Sikang Lab 提供代码、灵感和反馈的人。正是这些持续的贡献，让这个网站不断生长。</p></header>
+    <section class="thanks-section"><div class="thanks-title"><p class="eyebrow">PEOPLE</p><h2>贡献者</h2><span>基于当前 Git 提交记录</span></div>
+      <div class="contributor-grid contributor-grid-single">
+        <a class="contributor-card" href="https://github.com/gskgskgsk" target="_blank" rel="noopener"><div class="contributor-avatar">{{ with $avatar }}<img src="{{ .RelPermalink }}" alt="gskgskgsk">{{ end }}</div><div><h3>gskgskgsk</h3><p>项目维护者 · 全部提交</p></div><span>↗</span></a>
+      </div>
+    </section>
+    <section class="thanks-section"><div class="thanks-title"><p class="eyebrow">BUILT WITH</p><h2>特别感谢</h2><span>让 Sikang Lab 成为可能的开源项目与平台</span></div>
+      <div class="thanks-tools">
+        <a href="https://gohugo.io/" target="_blank" rel="noopener"><strong>Hugo</strong><span>静态站点生成器</span></a>
+        <a href="https://pages.github.com/" target="_blank" rel="noopener"><strong>GitHub Pages</strong><span>网站托管与发布</span></a>
+        <a href="https://peakxy.github.io/CodeLab/" target="_blank" rel="noopener"><strong>CodeLab</strong><span>设计与内容结构灵感</span></a>
+        <a href="https://umami.is/" target="_blank" rel="noopener"><strong>Umami</strong><span>隐私友好的访问统计</span></a>
+      </div>
+    </section>
+    <footer class="thanks-note"><p>也感谢每一位阅读、反馈和分享 Sikang Lab 内容的朋友。</p><a href="https://github.com/gskgskgsk/sikangLab" target="_blank" rel="noopener">参与贡献 →</a></footer>
+  </article>
 {{ else if eq .File.BaseFileName "about" }}
-  {{ $author := hugo.Data.authors.me }}
   {{ $avatar := resources.Get "media/authors/me.jpg" }}
   <article class="about-page wrap-narrow">
-    <header class="about-header"><p class="eyebrow">ABOUT ME</p><h1>我</h1><p>关于我，以及这个持续积累中的技术站点。</p></header>
     <section class="about-author">
       <div class="about-avatar">{{ with $avatar }}<img src="{{ .RelPermalink }}" alt="郭同学在coding">{{ end }}</div>
-      <div class="about-author-copy"><p class="eyebrow">THE BUILDER</p><h2>郭同学在coding</h2><p class="about-role">AI Agent <b>|</b> 全栈开发</p><p>{{ $author.bio | markdownify }}</p>
+      <div class="about-author-copy"><p class="eyebrow">THE BUILDER</p><h2>郭同学在coding</h2><p class="about-role">AI Agent <b>|</b> 全栈开发</p><p>关注全栈工程与 AI Agent。习惯把项目中遇到的问题、做过的取舍和最终方案整理成可以再次使用的经验。</p>
         <div class="about-socials"><a href="https://github.com/gskgskgsk" target="_blank" rel="noopener">GitHub ↗</a><a href="https://x.com/TheOrange991105" target="_blank" rel="noopener">X ↗</a><a href="mailto:guosikang115@163.com">Email ↗</a></div>
       </div>
     </section>
+    <nav class="about-toc" aria-label="本页目录"><span>ON THIS PAGE</span><a href="#about-lab">关于本站</a><a href="#about-me">我的关注</a><a href="#about-building">写在后面</a></nav>
     <div class="about-prose">
-      <section><p class="eyebrow">01 / SIKANG LAB</p><h2>关于 Sikang Lab</h2><p>Sikang Lab 是我的个人技术积累站。这里不展示教育经历或论文，更关注真实开发中的思考、踩坑记录、项目实践，以及可以复用的工程解决方案。</p><p>站点围绕 Java、Python、AI Agent 和全栈开发持续更新，也会保留工作沉淀与编码之外的生活记录。</p></section>
-      <section><p class="eyebrow">02 / ABOUT ME</p><h2>关于我</h2><p>我是郭同学，一名喜欢动手构建、持续学习和分享技术的开发者。关注 Web 工程与架构、开源工具链、AI 辅助开发，以及如何让工程协作和知识管理更高效。</p><p>我相信最有价值的技术积累，来自把复杂问题真正解决，再把过程讲清楚。</p></section>
+      <section id="about-lab"><p class="eyebrow">01 / SIKANG LAB</p><h2>关于本站</h2><p>Sikang Lab 是我的个人技术实践站。内容来自日常开发和项目实践，主题包括后端服务、自动化工具、AI Agent、前端实现和工程协作。</p><p>这里不放教育经历、论文或包装过的技能清单。我更愿意记录一个问题为什么出现、方案如何选择、实施过程中踩过哪些坑，以及最后留下了什么可复用的结论。</p><div class="about-topics"><span>Java 后端</span><span>Python 自动化</span><span>AI Agent</span><span>全栈开发</span><span>工程实践</span><span>生活记录</span></div></section>
+      <section id="about-me"><p class="eyebrow">02 / FOCUS</p><h2>我的关注</h2><p>我是郭同学，一名全栈开发者。目前主要关注 Java 与 Python 工程、Web 应用、AI Agent 的实际落地，以及开发流程中的效率问题。</p><p>比起追逐概念，我更在意技术能否稳定地解决问题：代码是否容易维护，工具是否真正节省时间，方案在离开演示环境后是否依然可靠。</p><p>这个网站也是我的工作台。它帮助我梳理思路、检验理解，并为下一次遇到类似问题保留清晰的参考。</p></section>
+      <section id="about-building"><p class="eyebrow">03 / NOTES</p><h2>写在后面</h2><p>本站不会为了更新而更新。文章可以不多，但每篇内容都应该有明确的问题背景、可验证的过程和尽可能准确的结论。旧内容发现问题后也会继续修正。</p><p>如果某篇记录帮到了你，或者你发现其中有遗漏和错误，欢迎通过 GitHub 提交 Issue 或参与修改。技术内容在交流和校正中会变得更有价值。</p><a class="about-contribute" href="https://github.com/gskgskgsk/sikangLab" target="_blank" rel="noopener">前往 GitHub 参与贡献 →</a></section>
     </div>
   </article>
 {{ else if eq .File.BaseFileName "links" }}
