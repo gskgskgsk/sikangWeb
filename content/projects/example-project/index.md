@@ -3,7 +3,7 @@ title: '示例项目（请替换）'
 date: 2026-08-18
 links:
   - type: site
-    url: https://github.com/gskgskgsk
+    url: https://github.com/itgsklab
 tags:
   - 示例
 ---

@@ -3,7 +3,7 @@ title: 'Sikang Website'
 date: 2026-08-18
 links:
   - type: site
-    url: https://gskgskgsk.github.io/sikangLab/
+    url: https://itgsklab.github.io/sikangLab/
 tags:
   - Hugo
   - HugoBlox

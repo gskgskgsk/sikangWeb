@@ -230,7 +230,7 @@ hugoblox:
   # ────────────────────────────────────────────────────────────────────────────
   repository:
     enable: false
-    url: "https://github.com/gskgskgsk/sikangLab" # e.g., https://github.com/username/repo
+    url: "https://github.com/itgsklab/sikangLab" # e.g., https://github.com/username/repo
     branch: main
     content_dir: content
 
